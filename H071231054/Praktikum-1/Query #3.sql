@@ -63,6 +63,8 @@ ADD UNIQUE(isbn);
 
 DESCRIBE authors;
 DESCRIBE books;
+DESCRIBE members;
+DESCRIBE borrowings;
 
 ALTER TABLE books
 -- ADD published_year YEAR NOT NULL;
