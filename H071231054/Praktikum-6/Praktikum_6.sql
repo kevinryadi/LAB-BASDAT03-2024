@@ -48,7 +48,7 @@ JOIN customers c
 USING (customerNumber)
 RIGHT JOIN employees e
 ON c.salesRepEmployeeNumber = e.employeeNumber
-JOIN offices OF
+JOIN offices of
 USING (officeCode)
 WHERE OF.country = 'Australia'
 GROUP BY employeeNumber, productName

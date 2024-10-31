@@ -6,15 +6,15 @@ SELECT DISTINCT  c.customerName AS 'namaKostumer',
 		 			  p.productDescription AS 'texDescription'
 FROM customers c
 JOIN orders o
-ON o.customerNumber = c.customerNumber
+USING (customerNumber)
 JOIN orderdetails od
-ON o.orderNumber = od.orderNumber
+USING (orderNumber)
 JOIN products p
-ON od.productCode = p.productCode
+USING (productCode)
 WHERE p.productName LIKE '%Titanic%'; 
 
 -- Nomor2
-SELECT c.customerName, p.productName, o.status, o.shippedDate
+SELECT c.customerName, p.productName, o.`status`, o.shippedDate
 FROM customers c
 JOIN orders o
 ON c.customerNumber = o.customerNumber
@@ -23,7 +23,7 @@ ON od.orderNumber = o.orderNumber
 JOIN products p
 ON od.productCode = p.productCode
 WHERE p.productName LIKE '%Ferrari%'AND 
-		o.status = 'Shipped'AND 
+		o.`status` = 'Shipped'AND 
 		o.shippedDate >= '2003-10-01' AND o.shippedDate <'2004-10-01'
 ORDER BY o.shippedDate DESC;
 

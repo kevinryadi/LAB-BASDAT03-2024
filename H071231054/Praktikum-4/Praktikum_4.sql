@@ -4,7 +4,7 @@ USE classicmodels
 SELECT customerNumber, customerName, country
 FROM customers
 
-WHERE (country = "USA" AND creditLimit > 50000 AND creditlimit < 100000) 
+WHERE (country = "USA" AND creditLimit > 50000 AND creditLimit < 100000) 
 OR (country != "USA" AND creditLimit >= 100000 AND creditLimit <= 200000)
 ORDER BY creditLimit DESC;
 
